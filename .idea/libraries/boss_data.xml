@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="boss_data">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/out/artifacts/boss_data_jar/boss_data.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

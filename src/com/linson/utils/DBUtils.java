@@ -261,7 +261,6 @@ public class DBUtils {
             result = pre.executeQuery();
             while (result.next()) {
                 customer.setTel(ToolsUtils.trimAll(result.getString("F_CONTACT_DETAIL")));
-                System.out.println(ToolsUtils.trimAll(result.getString("F_CONTACT_DETAIL")));
                 return customer;
             }
         } catch (SQLException e) {

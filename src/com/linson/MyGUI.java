@@ -38,18 +38,15 @@ public class MyGUI {
     static MyGUI gui = null;
 
     public static void main(String[] args) {
-        JFrame frame = new JFrame("数据查询导出工具1.0");
+        JFrame frame = new JFrame("数据查询导出工具2.0 20170220");
         gui = new MyGUI();
-//        JPanel rootPane=new MyGUI().panel1;
         frame.setContentPane(gui.panel1);
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.pack();
         frame.setVisible(true);
-//        frame.setLocationRelativeTo(rootPane);
         frame.setLocation(500, 100);
         frame.setSize(700, 800);
         //----------------------------------------------
-
         gui.button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -98,7 +95,6 @@ public class MyGUI {
                     searchId();
                 }
             }
-
             @Override
             public void keyReleased(KeyEvent e) {
             }
@@ -116,7 +112,6 @@ public class MyGUI {
                 gui.label5.setText(result);
             }
         });
-
     }
 
     private static void searchId() {
@@ -124,7 +119,4 @@ public class MyGUI {
         String str = Main.inputCustomerIdORServiceId(id);
         gui.textArea1.setText(str);
     }
-
-
-
 }

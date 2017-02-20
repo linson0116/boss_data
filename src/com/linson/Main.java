@@ -23,11 +23,13 @@ public class Main {
     public static void main(String[] args) {
         outputExcelByCityCode("975", "50");
     }
-
+    //根据城市id 输出excel文件 康平 975
+    //id 城市id nums 需要输出的记录数
     public static String outputExcelByCityCode(String cityCode,String nums) {
         long beginTime = System.currentTimeMillis();
         String strDate = new SimpleDateFormat("yyyy_MM_dd_HHmmss").format(new Date());
         String path = "d:\\" + strDate + ".xls";
+        //取得城市的所有用户id
         kangPingCustomerIdList = DBUtils.getCityInfosByCityCode(cityCode);
         int size = kangPingCustomerIdList.size();
         if (nums == null || nums.equals("")) {
@@ -52,13 +54,13 @@ public class Main {
         return result;
     }
 
-    private static List<C71> getC71() {
-        List list1 = DBUtils.getC71_1();
-        List<C71> list2 = DBUtils.getC71_2(list1);
-        List<C71> list3 = DBUtils.getC71_3(list2);
-        List<C71> list4 = DBUtils.getC71_4(list3);
-        return list4;
-    }
+//    private static List<C71> getC71() {
+//        List list1 = DBUtils.getC71_1();
+//        List<C71> list2 = DBUtils.getC71_2(list1);
+//        List<C71> list3 = DBUtils.getC71_3(list2);
+//        List<C71> list4 = DBUtils.getC71_4(list3);
+//        return list4;
+//    }
 
     public static String createDb2Json(int begin, int end, String[] arr) {
         return exportDB(arr, begin, end);
@@ -169,10 +171,10 @@ public class Main {
         return strJson;
     }
 
-    public static Customer getSingleCustomer(String searchId) {
-        Customer customer = getSingleCustomerByCustomerId(searchId);
-        return customer;
-    }
+//    public static Customer getSingleCustomer(String searchId) {
+//        Customer customer = getSingleCustomerByCustomerId(searchId);
+//        return customer;
+//    }
 
     //ByServiceId
     public static Customer getSingleCustomerByServiceId(String serviceId) {

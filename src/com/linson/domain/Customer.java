@@ -12,16 +12,12 @@ public class Customer {
 //    private String companyName;
     private String regionName;
     private String regionCode;
-
     private String identityKind;
     private String identityKindName;
     private String identityCode;
-
     private String addr;
-
     private String cityCode;
     private String cityName;
-
 
     private ArrayList<ServiceInfo> serviceInfos = new ArrayList<>();
     public ArrayList<ProductInfo> productInfos = new ArrayList<>();
@@ -33,7 +29,6 @@ public class Customer {
     public void setProductInfos(ArrayList<ProductInfo> productInfos) {
         this.productInfos = productInfos;
     }
-    //-------------------------------------------------------------------------------
 
     public ArrayList<ServiceInfo> getServiceInfos() {
         return serviceInfos;
@@ -43,11 +38,6 @@ public class Customer {
         this.serviceInfos = serviceInfos;
     }
 
-
-
-
-
-
     public String getIdentityKindName() {
         return identityKindName;
     }
@@ -55,8 +45,6 @@ public class Customer {
     public void setIdentityKindName(String identityKindName) {
         this.identityKindName = identityKindName;
     }
-
-
 
     public String getCustomerId() {
         return customerId;
@@ -140,7 +128,7 @@ public class Customer {
 
     @Override
     public String toString() {
-        return "Customer{" +System.lineSeparator()+
+        return "Customer{" +
                 "customerId='" + customerId + '\'' +
                 ", firstName='" + firstName + '\'' +
                 ", tel='" + tel + '\'' +
@@ -151,8 +139,9 @@ public class Customer {
                 ", identityCode='" + identityCode + '\'' +
                 ", addr='" + addr + '\'' +
                 ", cityCode='" + cityCode + '\'' +
-                ", cityName='" + cityName + '\'' + System.lineSeparator() + "\t"+
-                " serviceInfos=" + serviceInfos +
+                ", cityName='" + cityName + '\'' +
+                ", serviceInfos=" + serviceInfos +
+                ", productInfos=" + productInfos +
                 '}';
     }
 }

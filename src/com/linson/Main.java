@@ -21,7 +21,7 @@ public class Main {
     private static List<Customer> kangPingCustomerList = new ArrayList<>();
 
     public static void main(String[] args) {
-        outputExcelByCityCode("975", "50");
+        outputExcelByCityCode("975", "300");
     }
     //根据城市id 输出excel文件 康平 975
     //id 城市id nums 需要输出的记录数

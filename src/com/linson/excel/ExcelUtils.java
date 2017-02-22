@@ -96,110 +96,7 @@ public class ExcelUtils {
         }
 
     }
-//    public static void writeExcelKangPing(String path, List<Customer> list) {
-//        OutputStream os = null;
-//        try {
-//            os = new FileOutputStream(new File(path));
-//            //创建工作薄
-//            WritableWorkbook workbook = Workbook.createWorkbook(os);
-//            //创建新的一页
-//
-//            WritableSheet sheet = workbook.createSheet("康平用户信息",0);
-//            //创建要显示的内容,创建一个单元格，第一个参数为列坐标，第二个参数为行坐标，第三个参数为内容
-//            Label label1 = new Label(0,0,"客户姓名");
-//            sheet.addCell(label1);
-//            Label label2 = new Label(1,0,"联系电话");
-//            sheet.addCell(label2);
-//            Label label3 = new Label(2,0,"地址");
-//            sheet.addCell(label3);
-//            Label label4 = new Label(3,0,"证件类型");
-//            sheet.addCell(label4);
-//
-//            Label label5 = new Label(4,0,"证件号码");
-//            sheet.addCell(label5);
-//            Label label6 = new Label(5,0,"用户类型");
-//            sheet.addCell(label6);
-//
-//            Label label7 = new Label(6,0,"智能卡号");
-//            sheet.addCell(label7);
-//            Label label8 = new Label(7,0,"机顶盒号");
-//            sheet.addCell(label8);
-//            Label label9 = new Label(8,0,"产品信息");
-//            sheet.addCell(label9);
-//            Label label10 = new Label(9,0,"产品开始时间");
-//            sheet.addCell(label10);
-//            Label label11 = new Label(10,0,"产品结束时间");
-//            sheet.addCell(label11);
-//
-//            for (int i = 1; i < list.size()+1; i++) {
-//                Label getLabel1 = new Label(0,i,list.get(i-1).getFirstName());
-//                sheet.addCell(getLabel1);
-//                Label getLabel2 = new Label(1,i,list.get(i-1).getTel());
-//                sheet.addCell(getLabel2);
-//
-//                Label getLabel3 = new Label(2,i,list.get(i-1).getAddr());
-//                sheet.addCell(getLabel3);
-//
-//                Label getLabel4 = new Label(3,i,list.get(i-1).getIdentityKindName());
-//                sheet.addCell(getLabel4);
-//
-//                Label getLabel5 = new Label(4,i,list.get(i-1).getIdentityCode());
-//                sheet.addCell(getLabel5);
-//                Label getLabel6 = new Label(5,i,"普通用户");
-//                sheet.addCell(getLabel6);
-//
-//                ArrayList<ServiceInfo> serviceInfos = list.get(i - 1).getServiceInfos();
-//                String serviceIds = "";
-//                String boxIds = "";
-//                for (int j = 0; j < serviceInfos.size(); j++) {
-//                    String relationOrder = serviceInfos.get(j).getRelationOrder();
-//                    serviceIds += " " +relationOrder +" "+ serviceInfos.get(j).getServiceId();
-//                    boxIds += " " + serviceInfos.get(j).getBoxId();
-//                }
-//                Label getLabel7 = new Label(6,i,serviceIds);
-//                sheet.addCell(getLabel7);
-//
-//                Label getLabel8 = new Label(7,i,boxIds);
-//                sheet.addCell(getLabel8);
-//
-//                ArrayList<ProductInfo> productInfos = list.get(i - 1).getProductInfos();
-//                if (productInfos.size()>0) {
-//                    String productNames = "";
-//                    String productBeginDate = "";
-//                    String productEndDate = "";
-//                    for (int j = 0; j < productInfos.size(); j++) {
-//                        productNames += " " +productInfos.get(j).getProductName();
-//                        productBeginDate+=" " +productInfos.get(j).getBillStartDate();
-//                        productEndDate +=" " +productInfos.get(j).getBillEndDate();
-//                    }
-//                    Label getLabel9 = new Label(8,i,productNames);
-//                    sheet.addCell(getLabel9);
-//                    Label getLabel10 = new Label(9,i,productBeginDate);
-//                    sheet.addCell(getLabel10);
-//                    Label getLabel11 = new Label(10,i,productEndDate);
-//                    sheet.addCell(getLabel11);
-//
-//                } else {
-//                    Label getLabel9 = new Label(8,i,"无");
-//                    sheet.addCell(getLabel9);
-//                    Label getLabel10 = new Label(9,i,"无");
-//                    sheet.addCell(getLabel10);
-//                    Label getLabel11 = new Label(10,i,"无");
-//                    sheet.addCell(getLabel11);
-//                }
-//            }
-//            //把创建的内容写入到输出流中，并关闭输出流
-//            workbook.write();
-//            workbook.close();
-//            os.close();
-//        } catch (FileNotFoundException e) {
-//            e.printStackTrace();
-//        } catch (WriteException e) {
-//            e.printStackTrace();
-//        } catch (IOException e) {
-//            e.printStackTrace();
-//        }
-//    }
+
     public static void writeExcelKangPing(String path, List<Customer> list) {
         OutputStream os = null;
         try {
@@ -226,16 +123,35 @@ public class ExcelUtils {
             Label label7 = new Label(6,0,"用户类型");
             sheet.addCell(label7);
 
-            Label label8 = new Label(7,0,"智能卡号");
+            Label label8 = new Label(7,0,"机顶盒号");
             sheet.addCell(label8);
-            Label label9 = new Label(8,0,"机顶盒号");
-            sheet.addCell(label9);
-            Label label10 = new Label(9,0,"产品信息");
-            sheet.addCell(label10);
-            Label label11 = new Label(10,0,"产品开始时间");
-            sheet.addCell(label11);
-            Label label12 = new Label(11,0,"产品结束时间");
-            sheet.addCell(label12);
+
+            Label label_9 = new Label(8,0,"智能卡1号");
+            sheet.addCell(label_9);
+            Label label_10 = new Label(9,0,"智能卡2号");
+            sheet.addCell(label_10);
+            Label label_11 = new Label(10,0,"智能卡3号");
+            sheet.addCell(label_11);
+            Label label_12 = new Label(11,0,"智能卡4号");
+            sheet.addCell(label_12);
+
+            Label label_13 = new Label(12,0,"产品信息1");
+            sheet.addCell(label_13);
+            Label label_14 = new Label(13,0,"产品信息2");
+            sheet.addCell(label_14);
+            Label label_15 = new Label(14,0,"产品信息3");
+            sheet.addCell(label_15);
+            Label label_16 = new Label(15,0,"产品信息4");
+            sheet.addCell(label_16);
+
+            Label label_17 = new Label(16,0,"产品1时间");
+            sheet.addCell(label_17);
+            Label label_18 = new Label(17,0,"产品2时间");
+            sheet.addCell(label_18);
+            Label label_19 = new Label(18,0,"产品3时间");
+            sheet.addCell(label_19);
+            Label label_20 = new Label(19,0,"产品4时间");
+            sheet.addCell(label_20);
 
             for (int i = 1; i < list.size()+1; i++) {
                 Label getLabel1 = new Label(0,i,list.get(i-1).getFirstName());
@@ -255,45 +171,113 @@ public class ExcelUtils {
                 sheet.addCell(getLabel6);
                 Label getLabel7 = new Label(6,i,"普通用户");
                 sheet.addCell(getLabel7);
-
-                ArrayList<ServiceInfo> serviceInfos = list.get(i - 1).getServiceInfos();
-                String serviceIds = "";
+                //---------------------------------------------------------------------------
+                String serviceId_1 = "";
+                String serviceId_2 = "";
+                String serviceId_3 = "";
+                String serviceId_4 = "";
                 String boxIds = "";
+                ArrayList<ServiceInfo> serviceInfos = list.get(i - 1).getServiceInfos();
                 for (int j = 0; j < serviceInfos.size(); j++) {
                     String relationOrder = serviceInfos.get(j).getRelationOrder();
-                    serviceIds += " " +relationOrder +" "+ serviceInfos.get(j).getServiceId();
-                    boxIds += " " + serviceInfos.get(j).getBoxId();
+                    String serviceId = serviceInfos.get(j).getServiceId();
+                    String boxId = serviceInfos.get(j).getBoxId();
+                    if (relationOrder.equals("母卡")) {
+                        Label getLabel_8 = new Label(8,i,serviceId);
+                        sheet.addCell(getLabel_8);
+                        serviceId_1 = serviceId;
+                    } else if (relationOrder.equals("第1子卡")) {
+                        Label getLabel_9 = new Label(9,i,serviceId);
+                        sheet.addCell(getLabel_9);
+                        serviceId_2 = serviceId;
+                    }else if (relationOrder.equals("第2子卡")) {
+                        Label getLabel_10 = new Label(10,i,serviceId);
+                        sheet.addCell(getLabel_10);
+                        serviceId_3 = serviceId;
+                    }else if (relationOrder.equals("第3子卡")) {
+                        Label getLabel_11 = new Label(11,i,serviceId);
+                        sheet.addCell(getLabel_11);
+                        serviceId_4 = serviceId;
+                    }
+                    boxIds +=boxId;
                 }
-                Label getLabel8 = new Label(7,i,serviceIds);
-                sheet.addCell(getLabel8);
-
-                Label getLabel9 = new Label(8,i,boxIds);
-                sheet.addCell(getLabel9);
-
+                Label getLabel_8 = new Label(7,i,boxIds);
+                sheet.addCell(getLabel_8);
+                //基本包产品Id 30046
                 ArrayList<ProductInfo> productInfos = list.get(i - 1).getProductInfos();
                 if (productInfos.size()>0) {
-                    String productNames = "";
-                    String productBeginDate = "";
-                    String productEndDate = "";
+                    String productNames_1 = "";
+                    String productNames_2 = "";
+                    String productNames_3 = "";
+                    String productNames_4 = "";
+
+                    String productTimes_1 = "";
+                    String productTimes_2 = "";
+                    String productTimes_3 = "";
+                    String productTimes_4 = "";
+
                     for (int j = 0; j < productInfos.size(); j++) {
-                        productNames += " " +productInfos.get(j).getProductName();
-                        productBeginDate+=" " +productInfos.get(j).getBillStartDate();
-                        productEndDate +=" " +productInfos.get(j).getBillEndDate();
+//                        productNames += " " +productInfos.get(j).getProductName();
+//                        productBeginDate+=" " +productInfos.get(j).getBillStartDate();
+//                        productEndDate +=" " +productInfos.get(j).getBillEndDate();
+                        String productId = productInfos.get(j).getProductId();
+                        String serviceId = productInfos.get(j).getServiceId();
+                        String productName = productInfos.get(j).getProductName();
+                        if (serviceId.equals(serviceId_1)) {
+                            productNames_1 += " " +productName;
+                            if (productId.equals("30046")) {
+                                String begin = productInfos.get(j).getBillStartDate();
+                                String end = productInfos.get(j).getBillEndDate();
+                                productTimes_1 = begin + "   " + end;
+                            }
+                        } else if (serviceId.equals(serviceId_2)) {
+                            productNames_2 += " " +productName;
+                            if (productId.equals("30046")) {
+                                String begin = productInfos.get(j).getBillStartDate();
+                                String end = productInfos.get(j).getBillEndDate();
+                                productTimes_2 = begin + "   " + end;
+                            }
+                        }else if (serviceId.equals(serviceId_3)) {
+                            productNames_3 += " " +productName;
+                            if (productId.equals("30046")) {
+                                String begin = productInfos.get(j).getBillStartDate();
+                                String end = productInfos.get(j).getBillEndDate();
+                                productTimes_3 = begin + "   " + end;
+                            }
+                        }else if (serviceId.equals(serviceId_4)) {
+                            productNames_4 += " " +productName;
+                            if (productId.equals("30046")) {
+                                String begin = productInfos.get(j).getBillStartDate();
+                                String end = productInfos.get(j).getBillEndDate();
+                                productTimes_4 = begin + "   " + end;
+                            }
+                        }
                     }
-                    Label getLabel10 = new Label(9,i,productNames);
-                    sheet.addCell(getLabel10);
-                    Label getLabel11 = new Label(10,i,productBeginDate);
-                    sheet.addCell(getLabel11);
-                    Label getLabel12 = new Label(11,i,productEndDate);
-                    sheet.addCell(getLabel12);
+                    Label getLabel_12 = new Label(12,i,productNames_1);
+                    sheet.addCell(getLabel_12);
+                    Label getLabel_13 = new Label(13,i,productNames_2);
+                    sheet.addCell(getLabel_13);
+                    Label getLabel_14 = new Label(14,i,productNames_3);
+                    sheet.addCell(getLabel_14);
+                    Label getLabel_15 = new Label(15,i,productNames_4);
+                    sheet.addCell(getLabel_15);
+                    //----------------------------------------------------------
+                    Label getLabel_16 = new Label(16,i,productTimes_1);
+                    sheet.addCell(getLabel_16);
+                    Label getLabel_17 = new Label(17,i,productTimes_2);
+                    sheet.addCell(getLabel_17);
+                    Label getLabel_18 = new Label(18,i,productTimes_3);
+                    sheet.addCell(getLabel_18);
+                    Label getLabel_19 = new Label(19,i,productTimes_4);
+                    sheet.addCell(getLabel_19);
 
                 } else {
-                    Label getLabel10 = new Label(9,i,"无");
-                    sheet.addCell(getLabel10);
-                    Label getLabel11 = new Label(10,i,"无");
-                    sheet.addCell(getLabel11);
-                    Label getLabel12 = new Label(11,i,"无");
-                    sheet.addCell(getLabel12);
+//                    Label getLabel10 = new Label(9,i,"无");
+//                    sheet.addCell(getLabel10);
+//                    Label getLabel11 = new Label(10,i,"无");
+//                    sheet.addCell(getLabel11);
+//                    Label getLabel12 = new Label(11,i,"无");
+//                    sheet.addCell(getLabel12);
                 }
             }
             //把创建的内容写入到输出流中，并关闭输出流

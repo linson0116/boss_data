@@ -4,7 +4,7 @@ package com.linson.domain;
  * Created by Administrator on 2016/8/24.
  */
 public class ProductInfo {
-    //private String serviceId;
+    private String serviceId;
     private String productId;
     private String productName;
     private String billStartDate;
@@ -32,6 +32,14 @@ public class ProductInfo {
 //    public void setFeeName(String feeName) {
 //        this.feeName = feeName;
 //    }
+
+    public String getServiceId() {
+        return serviceId;
+    }
+
+    public void setServiceId(String serviceId) {
+        this.serviceId = serviceId;
+    }
 
     public String getProductPrice() {
         return productPrice;

@@ -407,12 +407,12 @@ public class DBUtils {
 
     public static Customer getProducts(Customer customer) {
         for (ServiceInfo serviceInfo :customer.getServiceInfos()) {
-            ArrayList<ProductInfo> list = getProduct(serviceInfo.getUserId());
+            ArrayList<ProductInfo> list = getProduct(serviceInfo.getUserId(),serviceInfo.getServiceId());
             serviceInfo.setProductInfos(list);
         }
         return customer;
     }
-    public static ArrayList<ProductInfo> getProduct(String userId) {
+    public static ArrayList<ProductInfo> getProduct(String userId,String serviceId) {
         PreparedStatement pre = null;
         ResultSet result = null;
         String sql = "SELECT * from BB_USER_PRODUCT_INFO_T where F_USER_ID = ?";
@@ -428,6 +428,7 @@ public class DBUtils {
                     continue;
                 }
                 ProductInfo info = new ProductInfo();
+                info.setServiceId(serviceId);
                 info.setProductId(result.getString("F_PRODUCT_ID"));
                 info.setBillStartDate(result.getString("F_BILL_START_DATE"));
                 info.setBillEndDate(result.getString("F_BILL_END_DATE"));
